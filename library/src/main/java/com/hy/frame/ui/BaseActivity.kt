@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import com.hy.frame.common.*
 import com.hy.frame.ui.simple.TemplateController
@@ -59,7 +60,7 @@ abstract class BaseActivity : AppCompatActivity(), IBaseUI, IBaseTemplateUI, IBa
         return this.mTemplateController
     }
 
-    override fun buildTemplateController(): ITemplateController {
+    override fun buildTemplateController(): ITemplateController? {
         return TemplateController(this)
     }
 
