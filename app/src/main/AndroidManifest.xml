@@ -1,0 +1,31 @@
+<manifest
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.hy.demo.iframe.adx">
+
+    <application
+            android:name="com.hy.demo.app.MyApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_logo"
+            android:label="@string/appName"
+            android:supportsRtl="false"
+            android:theme="@style/AppTheme"
+            tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute"
+            tools:replace="android:theme">
+
+        <activity android:name="com.hy.demo.ui.LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.hy.demo.ui.MainActivity" />
+        <activity android:name="com.hy.demo.ui.MenuActivity" />
+        <activity android:name="com.hy.demo.ui.TestActivity" />
+        <activity android:name="com.hy.demo.ui.list.ListActivity" />
+
+        <activity android:name="com.hy.demo.ui.list.GridActivity" />
+    </application>
+</manifest>

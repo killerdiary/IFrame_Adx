@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    def APP_ID = "com.hy.demo.iframe.adx"
+    def APP_NAME = "IFrameAdx测试"
+
+    compileSdkVersion VERSION.compileSdkVersion
+    buildToolsVersion VERSION.buildToolsVersion //需要发布maven时必须
+
+    defaultConfig {
+        minSdkVersion VERSION.minSdkVersion
+        targetSdkVersion VERSION.targetSdkVersion
+
+        applicationId APP_ID
+        resValue "string", "appName", APP_NAME
+
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility VERSION.javaVersion
+        targetCompatibility VERSION.javaVersion
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${APP_ID}.v${variant.versionName}"
+            outputFileName += ".apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.kotlin.stdlib
+    implementation deps.frame.iframe
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation(project(path: ':library'))
+}

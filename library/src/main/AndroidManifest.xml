@@ -1,0 +1,7 @@
+<manifest
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.hy.iframe.adx">
+    <!--TODO-->
+    <application android:theme="@style/Base_AdxTheme" />
+
+</manifest>
