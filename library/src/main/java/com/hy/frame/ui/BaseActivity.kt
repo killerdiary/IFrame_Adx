@@ -255,8 +255,6 @@ abstract class BaseActivity : AppCompatActivity(), IBaseUI, IBaseTemplateUI, IBa
     override fun initLayout(): View? {
         if (this.mLayout != null) return this.mLayout
         var cLayout: View? = null
-        val cToolbar: ViewGroup?
-        val cMain: ViewGroup?
         val customView = layoutView
         if (isSingleLayout) {
             if (customView != null) {
@@ -268,13 +266,19 @@ abstract class BaseActivity : AppCompatActivity(), IBaseUI, IBaseTemplateUI, IBa
             cLayout = View.inflate(curContext, baseLayoutId, null)
         }
         if (cLayout == null) return null
-        cToolbar = findViewById(R.id.base_cToolBar, cLayout)
-        cMain = findViewById(R.id.base_cMain, cLayout)
-        if (!isSingleLayout && cMain != null) {
-            if (customView != null) {
-                cMain.addView(customView)
-            } else if (layoutId != 0) {
-                View.inflate(curContext, layoutId, cMain)
+        val cToolbar: ViewGroup? = findViewById(R.id.base_cToolBar, cLayout)
+        var cMain: ViewGroup? = findViewById(R.id.base_cMain, cLayout)
+        if (!isSingleLayout) {
+            if (cMain != null) {
+                if (customView != null) {
+                    cMain.addView(customView)
+                } else if (layoutId != 0) {
+                    View.inflate(curContext, layoutId, cMain)
+                }
+            }
+        } else {
+            if (cMain == null && cLayout is ViewGroup) {
+                cMain = cLayout
             }
         }
         if (this.mTemplateController != null) {
