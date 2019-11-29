@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion VERSION.minSdkVersion
         targetSdkVersion VERSION.targetSdkVersion
-        versionCode 4
-        versionName "1.0.3"
+        versionCode 5
+        versionName "1.0.4"
     }
 
     buildTypes {
@@ -33,7 +33,7 @@ dependencies {
     implementation deps.frame.iframe
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
 
 apply from: "../maven-release-aar.gradle" //需要发布maven时必须

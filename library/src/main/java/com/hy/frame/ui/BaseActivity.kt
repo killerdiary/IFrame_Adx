@@ -6,11 +6,9 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
-
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import com.hy.frame.common.*
 import com.hy.frame.ui.simple.TemplateController
@@ -24,7 +22,7 @@ import com.hy.iframe.adx.R
  * time 19-7-11 上午9:59
  * desc 无
  */
-abstract class BaseActivity : AppCompatActivity(), IBaseUI, IBaseTemplateUI, IBaseActivity, View.OnClickListener {
+abstract class BaseActivity : AppCompatActivity(), IBaseUI, ILifeUI, IBaseTemplateUI, IBaseActivity, View.OnClickListener {
 
     private var mApp: IBaseApplication? = null
     private var mTemplateController: ITemplateController? = null
@@ -311,19 +309,19 @@ abstract class BaseActivity : AppCompatActivity(), IBaseUI, IBaseTemplateUI, IBa
         this.mDestroy = true
     }
 
-    fun isIDestroy(): Boolean {
+    override fun isIDestroy(): Boolean {
         return mDestroy
     }
 
-    fun isIPause(): Boolean {
+    override fun isIPause(): Boolean {
         return mPause
     }
 
-    fun isIStop(): Boolean {
+    override fun isIStop(): Boolean {
         return mStop
     }
 
-    fun isIResume(): Boolean {
+    override fun isIResume(): Boolean {
         return mResume
     }
 }

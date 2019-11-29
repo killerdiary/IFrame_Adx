@@ -18,7 +18,7 @@ import com.hy.iframe.adx.R
  * author HeYan
  * time 2015/12/23 17:12
  */
-abstract class BaseFragment : Fragment(), IBaseUI, IBaseTemplateUI, IBaseFragment<Fragment>, View.OnClickListener {
+abstract class BaseFragment : Fragment(), IBaseUI, ILifeUI, IBaseTemplateUI, IBaseFragment<Fragment>, View.OnClickListener {
 
     private var mTemplateController: ITemplateController? = null
     private var mImageLoader: IImageLoader? = null
@@ -309,19 +309,19 @@ abstract class BaseFragment : Fragment(), IBaseUI, IBaseTemplateUI, IBaseFragmen
         this.mLayout = null
     }
 
-    fun isIDestroy(): Boolean {
+    override fun isIDestroy(): Boolean {
         return mDestroy
     }
 
-    fun isIPause(): Boolean {
+    override fun isIPause(): Boolean {
         return mPause
     }
 
-    fun isIStop(): Boolean {
+    override fun isIStop(): Boolean {
         return mStop
     }
 
-    fun isIResume(): Boolean {
+    override fun isIResume(): Boolean {
         return mResume
     }
 }
