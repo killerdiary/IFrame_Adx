@@ -123,6 +123,8 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseHolder>, IBaseAdapter<T
     override fun getItemCount(): Int = dataCount
 
     override fun onBindViewHolder(holder: BaseHolder, position: Int) {
+        if(isBindDataId)
+            holder.itemView.id = getDataId(position)
         bindItemData(holder, position)
     }
 
