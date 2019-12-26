@@ -96,12 +96,7 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseHolder>, IBaseAdapter<T
     }
 
     override fun refresh(datas: MutableList<T>?) {
-        if (this.mDatas != null) {
-            this.mDatas!!.clear()
-            if (datas != null) this.mDatas!!.addAll(datas)
-        } else {
-            this.mDatas = datas
-        }
+        this.mDatas = datas
         refresh()
     }
 
