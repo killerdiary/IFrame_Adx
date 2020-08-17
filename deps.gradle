@@ -1,0 +1,32 @@
+def VERS = [:]
+VERS.minSdkVersion = 19
+VERS.compileSdkVersion = 28
+VERS.targetSdkVersion = 28
+VERS.buildToolsVersion = "28.0.3"
+VERS.javaVersion = 1.8
+
+VERS.plugin_gradle = '3.5.0'
+VERS.plugin_github = "2.1"
+
+VERS.androidx_appcompat = "1.2.0"
+
+VERS.frame_iframe = "3.0.0"
+
+ext.VERS = VERS
+
+def deps = [:]
+
+def plugin = [:]
+plugin.gradle = "com.android.tools.build:gradle:${VERS.plugin_gradle}"
+plugin.github = "com.github.dcendents:android-maven-gradle-plugin:${VERS.plugin_github}"
+deps.plugin = plugin
+
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:${VERS.androidx_appcompat}"
+deps.androidx = androidx
+
+def frame = [:]
+frame.iframe = "com.github.killerdiary:IFrame:${VERS.frame_iframe}"
+deps.frame = frame
+
+ext.deps = deps

@@ -1,17 +1,16 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     def APP_ID = "com.hy.iframe.adx"
 
-    compileSdkVersion VERSION.compileSdkVersion
-    buildToolsVersion VERSION.buildToolsVersion //需要发布maven时必须
+    compileSdkVersion VERS.compileSdkVersion
+    buildToolsVersion VERS.buildToolsVersion //需要发布maven时必须
 
     defaultConfig {
-        minSdkVersion VERSION.minSdkVersion
-        targetSdkVersion VERSION.targetSdkVersion
-        versionCode 7
-        versionName "1.0.6"
+        minSdkVersion VERS.minSdkVersion
+        targetSdkVersion VERS.targetSdkVersion
+        versionCode 8
+        versionName "2.0.0"
     }
 
     buildTypes {
@@ -21,19 +20,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility VERSION.javaVersion
-        targetCompatibility VERSION.javaVersion
-        kotlinOptions.freeCompilerArgs += ['-module-name', "$APP_ID"]
+        sourceCompatibility VERS.javaVersion
+        targetCompatibility VERS.javaVersion
+        //kotlinOptions.freeCompilerArgs += ['-module-name', "$APP_ID"]
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation deps.kotlin.stdlib
-    implementation deps.frame.iframe
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    api deps.frame.iframe
+    implementation deps.androidx.appcompat
+//    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
 
 apply from: "../maven-release-aar.gradle" //需要发布maven时必须

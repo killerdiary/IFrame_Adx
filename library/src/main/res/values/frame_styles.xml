@@ -2,41 +2,81 @@
 <resources>
 
     <style name="Base_AdxTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:textColorPrimary">@color/txt_black</item>
-        <item name="android:textColorHighlight">@color/txt_gray_light</item>
-        <item name="android:textColorHint">@color/txt_gray</item>
-        <item name="android:textColorLink">@color/blue</item>
-        <!--        <item name="android:textAppearance">@style/AppBaseTheme.TxtStyle</item>-->
-        <item name="toolbarStyle">@style/CurToolbar</item>
         <item name="appHeaderHeight">@dimen/header_height</item>
         <item name="appBackground">@color/smoke</item>
         <item name="appThemeColor">@color/blue</item>
         <item name="appTitleSize">@dimen/txt_title</item>
         <item name="appTitleColor">@color/white</item>
         <item name="appTitleBarBg">?attr/appThemeColor</item>
-        <item name="appProgressColor">@color/blue</item>
-        <item name="appControlHighlight">@color/btn_highlight</item>
-        <!--标题栏颜色-->
-        <item name="colorPrimary">?attr/appThemeColor</item>
-        <!--状态栏颜色-->
-        <item name="colorPrimaryDark">?attr/appThemeColor</item>
-        <!--控制各个控件被选中时的颜色-->
-        <item name="colorAccent">?attr/appThemeColor</item>
-        <!--控件的默认色调-->
-        <item name="colorControlNormal">@color/white</item>
-        <!--控件激活时候的色调-->
-        <item name="colorControlActivated">@color/white</item>
-        <!--控件高亮-->
-        <item name="colorControlHighlight">@color/btn_highlight</item>
-        <!--按钮默认状态下的背景色-->
-        <item name="colorButtonNormal">?attr/appThemeColor</item>
+        <item name="appProgressColor">?attr/appThemeColor</item>
+        <item name="appControlHighlight">@color/highlight</item>
+        <item name="appTextStyle">@style/Base_TxtStyle</item>
+        <item name="appEditStyle">@style/Base_EditStyle</item>
+        <item name="appButtonStyle">@style/Base_BtnStyle</item>
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">?attr/appBackground</item>
+
+        <item name="android:textViewStyle">@style/Base_TxtStyle</item>
+        <item name="android:editTextStyle">@style/Base_EditStyle</item>
+        <item name="android:buttonStyle">@style/Base_BtnStyle</item>
+
+        <!--去掉标题栏前空白-->
+        <item name="toolbarStyle">@style/CurToolbar</item>
+        <!--        &lt;!&ndash;标题栏颜色&ndash;&gt;-->
+        <!--        <item name="colorPrimary">?attr/appThemeColor</item>-->
+        <!--        &lt;!&ndash;状态栏颜色&ndash;&gt;-->
+        <!--        <item name="colorPrimaryDark">?attr/appThemeColor</item>-->
+        <!--        &lt;!&ndash;控制各个控件被选中时的颜色&ndash;&gt;-->
+        <!--        <item name="colorAccent">?attr/appThemeColor</item>-->
+        <!--        &lt;!&ndash;控件的默认色调&ndash;&gt;-->
+        <!--        <item name="colorControlNormal">?attr/appThemeColor</item>-->
+        <!--        &lt;!&ndash;控件激活时候的色调&ndash;&gt;-->
+        <!--        <item name="colorControlActivated">?attr/appThemeColor</item>-->
+        <!--        &lt;!&ndash;控件高亮&ndash;&gt;-->
+        <!--        <item name="colorControlHighlight">?attr/appControlHighlight</item>-->
+        <!--        &lt;!&ndash;按钮默认状态下的背景色&ndash;&gt;-->
+        <!--        <item name="colorButtonNormal">?attr/appThemeColor</item>-->
+        <!--        <item name="android:windowBackground">?attr/appBackground</item>-->
     </style>
 
     <style name="CurToolbar" parent="Widget.AppCompat.Toolbar">
         <item name="contentInsetStart">0dp</item>
         <!-- 设置该属性解决空白部分-->
+    </style>
+    <style name="Base_TxtStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:textColorHint">@color/txt_gray</item>
+        <item name="android:textColorHighlight">@color/txt_gray_light</item>
+        <item name="android:textColorLink">@color/blue</item>
+        <item name="android:textSize">@dimen/txt_default</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Base_EditStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:hint">@string/edit_input_hint</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">10dip</item>
+        <item name="android:paddingBottom">10dip</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:paddingRight">10dip</item>
+        <item name="android:textColorHint">@color/txt_gray_light</item>
+    </style>
+
+    <style name="Base_BtnStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:minWidth">0dip</item>
+        <item name="android:minHeight">@dimen/btn_height</item>
+        <item name="android:paddingTop">10dip</item>
+        <item name="android:paddingBottom">10dip</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:paddingRight">10dip</item>
+        <item name="android:textColor">@color/txt_black</item>
     </style>
 </resources>
