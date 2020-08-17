@@ -8,7 +8,6 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/item_selector"
-            android:textColor="@color/txt_black"
             android:gravity="center"
             android:minHeight="60dp"
             android:text="New Text" />

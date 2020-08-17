@@ -7,11 +7,10 @@
         android:orientation="vertical">
 
 
-    <com.hy.frame.widget.AutoFrameLayout
+    <FrameLayout
             android:id="@+id/main_cTest"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:designScreenWidth="1280px">
+            android:layout_height="match_parent">
 
         <TextView
                 android:layout_width="wrap_content"
@@ -27,5 +26,5 @@
                 android:layout_width="1280px"
                 android:layout_height="60px"
                 android:background="@color/translucence" />
-    </com.hy.frame.widget.AutoFrameLayout>
+    </FrameLayout>
 </LinearLayout>
