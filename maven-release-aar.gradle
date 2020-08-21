@@ -1,9 +1,9 @@
 // 1.maven-插件
 //apply plugin: 'maven'
 apply plugin: 'com.github.dcendents.android-maven' //github插件支持 用于发布maven
-group = 'com.gitee.killer' //发布仓库https://gitee.com/killer/
+group = 'com.gitee.killer' //github不需配置 https://gitee.com/killer/
 //group = 'com.github.killerdiary'
-version = '1.0'
+//version = '1.0'
 
 //// 2.maven-信息
 //ext {// ext is a gradle closure allowing the declaration of global properties

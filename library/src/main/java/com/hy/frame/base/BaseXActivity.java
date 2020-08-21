@@ -70,18 +70,25 @@ public abstract class BaseXActivity<T extends BaseTemplateUI> extends AppCompatA
         return this.mTemplateUI;
     }
 
-    @Override
+    /**
+     * 获取图片加载器
+     */
     @Nullable
     public IImageLoader getImageLoader() {
+        if (isIDestroy()) return null;
+        if (this.mImageLoader == null)
+            this.mImageLoader = buildImageLoader();
         return this.mImageLoader;
     }
 
-    @Override
     @Nullable
-    public IImageLoader buildImageLoader() {
-        return null;
-    }
+    public abstract IImageLoader buildImageLoader();
 
+    /**
+     * 设置图片加载器
+     *
+     * @return IImageLoader 用于子类拓展
+     */
     @Override
     @Nullable
     public IApplication getCurApp() {
@@ -241,7 +248,6 @@ public abstract class BaseXActivity<T extends BaseTemplateUI> extends AppCompatA
             }
         }
         this.mTemplateUI = mTemplateUI;
-        this.mImageLoader = buildImageLoader();
     }
 
     @Override

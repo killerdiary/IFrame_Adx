@@ -55,17 +55,20 @@ public abstract class BaseXFragment<T extends BaseTemplateUI> extends Fragment i
         return this.mTemplateUI;
     }
 
-    @Override
+    /**
+     * 获取图片加载器
+     */
     @Nullable
     public IImageLoader getImageLoader() {
+        if (isIDestroy()) return null;
+        if (this.mImageLoader == null)
+            this.mImageLoader = buildImageLoader();
         return this.mImageLoader;
     }
 
-    @Override
     @Nullable
-    public IImageLoader buildImageLoader() {
-        return null;
-    }
+    public abstract IImageLoader buildImageLoader();
+
 
     @Override
     @Nullable
@@ -175,7 +178,7 @@ public abstract class BaseXFragment<T extends BaseTemplateUI> extends Fragment i
         if (this.mTemplateUI == null) {
             initLayout();
         }
-        if(this.mTemplateUI != null)
+        if (this.mTemplateUI != null)
             return this.mTemplateUI.getRootLayout();
         return null;
     }
@@ -210,7 +213,7 @@ public abstract class BaseXFragment<T extends BaseTemplateUI> extends Fragment i
             mTemplateUI.build();
         }
         this.mTemplateUI = mTemplateUI;
-        this.mImageLoader = buildImageLoader();
+        this.mInit = true;
     }
 
     @Override
