@@ -1,7 +1,8 @@
 # IFrame_Adx
 #### Android IFrame_Adx
 
-[![](https://jitpack.io/v/killerdiary/IFrame_Adx.svg)](https://jitpack.io/#killerdiary/IFrame_Adx)
+[![](https://jitpack.io/v/com.gitee.killer/IFrame_Adx.svg)](https://jitpack.io/#com.gitee.killer/IFrame_Adx)
+
 
 
 #### 使用方式
@@ -20,7 +21,7 @@ allprojects {
 ##### Step 2. Add the dependency
 ~~~
 dependencies {
-    implementation 'com.github.killerdiary:IFrame_Adx:XXX'
+    implementation 'com.gitee.killer:IFrame_Adx:XXX'
 }
 
 ~~~
